@@ -66,4 +66,20 @@ return {
       map("n", "<leader>gd", gs.diffthis, { desc = "Diff this" })
     end,
   },
+  "kdheepak/lazygit.nvim",
+  cmd = {
+    "LazyGit",
+    "LazyGitConfig",
+    "LazyGitCurrentFile",
+    "LazyGitFilter",
+    "LazyGitFilterCurrentFile",
+  },
+  -- Optional for floating window border decoration
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
+  -- Setting the keybinding
+  keys = {
+    { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+  }
 }
