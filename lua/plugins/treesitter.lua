@@ -5,20 +5,15 @@ return {
     require("nvim-treesitter").setup({
       ensure_installed = {
         "bash",
-        "c",
         "css",
         "html",
         "javascript",
         "json",
         "lua",
         "markdown",
-        "markdown_inline",
         "python",
-        "rust",
         "tsx",
         "typescript",
-        "vim",
-        "vimdoc",
         "yaml",
       },
     })

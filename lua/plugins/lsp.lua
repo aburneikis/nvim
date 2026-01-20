@@ -19,7 +19,6 @@ return {
           "lua_ls",
           "ts_ls",
           "pyright",
-          "rust_analyzer",
         },
         automatic_installation = true,
       })
@@ -85,12 +84,8 @@ return {
         capabilities = capabilities,
       })
 
-      vim.lsp.config("rust_analyzer", {
-        capabilities = capabilities,
-      })
-
       -- Enable configured servers
-      vim.lsp.enable({ "lua_ls", "ts_ls", "pyright", "rust_analyzer" })
+      vim.lsp.enable({ "lua_ls", "ts_ls", "pyright" })
 
       -- Diagnostic signs
       local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
