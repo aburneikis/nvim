@@ -4,9 +4,9 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
 			signs = {
-				add = { text = "│" },
-				change = { text = "│" },
-				delete = { text = "_" },
+				add = { text = "│", color = "GitSignsAdd" },
+				change = { text = "│", color = "GitSignsChange" },
+				delete = { text = "_", color = "GitSignsDelete" },
 				topdelete = { text = "‾" },
 				changedelete = { text = "~" },
 				untracked = { text = "┆" },
@@ -39,6 +39,10 @@ return {
 					vim.schedule(function() gs.prev_hunk() end)
 					return "<Ignore>"
 				end, { expr = true, desc = "Previous git hunk" })
+
+        -- GitSignsAdd green setup
+        local green = require("tokyonight.colors").setup().green
+        vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = green, bg = "NONE" })
 
 				-- Actions
 				map("n", "<leader>gs", gs.stage_hunk, { desc = "Stage hunk" })
