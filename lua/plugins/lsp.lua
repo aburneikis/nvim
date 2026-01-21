@@ -36,7 +36,6 @@ return {
 					"lua_ls",
 					"ts_ls",
 					"pyright",
-					"eslint",
 				},
 				automatic_installation = true,
 			})
@@ -100,18 +99,8 @@ return {
 				capabilities = capabilities,
 			})
 
-			vim.lsp.config("eslint", {
-				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						buffer = bufnr,
-						command = "EslintFixAll",
-					})
-				end,
-			})
-
 			-- Enable configured servers
-			vim.lsp.enable({ "lua_ls", "ts_ls", "pyright", "eslint" })
+			vim.lsp.enable({ "lua_ls", "ts_ls", "pyright" })
 
 			-- Diagnostic signs
 			local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
