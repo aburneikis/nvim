@@ -1,0 +1,5 @@
+column_width = 9999
+collapse_simple_statement = "Always"
+
+[sort_requires]
+enabled = false

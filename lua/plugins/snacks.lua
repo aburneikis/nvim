@@ -7,8 +7,8 @@ return {
 			enabled = true,
 			config = {
 				os = {
-					edit = 'nvim --server $NVIM --remote-send "<cmd>lua Snacks.lazygit():hide(); vim.cmd.edit(\'{{filename}}\')<cr>"',
-					editAtLine = 'nvim --server $NVIM --remote-send "<cmd>lua Snacks.lazygit():hide(); vim.cmd.edit(\'{{filename}}\'); vim.cmd(\'normal! {{line}}G\')<cr>"',
+					edit = "nvim --server $NVIM --remote-send \"<cmd>lua Snacks.lazygit():hide(); vim.cmd.edit('{{filename}}')<cr>\"",
+					editAtLine = "nvim --server $NVIM --remote-send \"<cmd>lua Snacks.lazygit():hide(); vim.cmd.edit('{{filename}}'); vim.cmd('normal! {{line}}G')<cr>\"",
 				},
 			},
 		},
@@ -16,23 +16,17 @@ return {
 	keys = {
 		{
 			"<leader>gg",
-			function()
-				Snacks.lazygit()
-			end,
+			function() Snacks.lazygit() end,
 			desc = "Lazygit",
 		},
 		{
 			"<leader>gf",
-			function()
-				Snacks.lazygit.log_file()
-			end,
+			function() Snacks.lazygit.log_file() end,
 			desc = "Lazygit File History",
 		},
 		{
 			"<leader>gl",
-			function()
-				Snacks.lazygit.log()
-			end,
+			function() Snacks.lazygit.log() end,
 			desc = "Lazygit Log (cwd)",
 		},
 	},
