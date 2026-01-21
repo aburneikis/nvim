@@ -43,3 +43,18 @@ map("n", "N", "Nzzzv", { desc = "Previous search result centered" })
 map({ "n", "v" }, "y", '"+y', { desc = "Yank to clipboard" })
 map("n", "Y", '"+y$', { desc = "Yank to end of line to clipboard" })
 map("n", "yy", '"+yy', { desc = "Yank line to clipboard" })
+
+-- Return to dashboard
+map("n", "<leader>d", function() Snacks.dashboard() end, { desc = "Open dashboard" })
+
+-- Yank file path (relative on f, absolute on F)
+map("n", "<leader>yf", function()
+	local filepath = vim.fn.expand("%:.")
+	vim.fn.setreg("+", filepath)
+	print("Yanked relative file path: " .. filepath)
+end, { desc = "Yank relative file path" })
+map("n", "<leader>yF", function()
+	local filepath = vim.fn.expand("%:p")
+	vim.fn.setreg("+", filepath)
+	print("Yanked absolute file path: " .. filepath)
+end, { desc = "Yank absolute file path" })

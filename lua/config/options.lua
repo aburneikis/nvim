@@ -13,7 +13,7 @@ opt.smartindent = true
 -- Search
 opt.ignorecase = true
 opt.smartcase = true
-opt.hlsearch = false
+-- opt.hlsearch = false
 opt.incsearch = true
 
 -- Appearance
