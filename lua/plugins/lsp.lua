@@ -35,6 +35,7 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"vtsls",
+					"angularls",
 					"pyright",
 					"eslint",
 				},
@@ -132,8 +133,12 @@ return {
 				capabilities = capabilities,
 			})
 
+			vim.lsp.config("angularls", {
+				capabilities = capabilities,
+			})
+
 			-- Enable configured servers
-			vim.lsp.enable({ "lua_ls", "vtsls", "pyright", "eslint" })
+			vim.lsp.enable({ "lua_ls", "vtsls", "angularls", "pyright", "eslint" })
 
 			-- Diagnostic signs
 			local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }

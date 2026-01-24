@@ -4,6 +4,7 @@ return {
 	config = function()
 		require("nvim-treesitter").setup({
 			ensure_installed = {
+				"angular",
 				"bash",
 				"css",
 				"html",
