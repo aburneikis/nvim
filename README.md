@@ -4,10 +4,6 @@ My nvim config
 
 **Leader Key**: `<Space>`
 
-## Plugin Manager
-
-**Lazy.nvim** (`folke/lazy.nvim`) - Auto-bootstraps on first run with performance optimizations.
-
 ---
 
 ## Plugins
