@@ -28,7 +28,6 @@ return {
 		spec = {
 			{ "<leader>f", group = "find" },
 			{ "<leader>c", group = "quickfix" },
-			{ "<leader>x", group = "diagnostics" },
 			{ "<leader>1", hidden = true },
 			{ "<leader>2", hidden = true },
 			{ "<leader>3", hidden = true },
