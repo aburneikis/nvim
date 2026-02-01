@@ -3,7 +3,6 @@ return {
 	branch = "skills-v2",
 	config = function()
 		local _99 = require("99")
-
 		local cwd = vim.uv.cwd()
 
 		-- Ensure tmp directory exists for 99 plugin
@@ -25,14 +24,11 @@ return {
 			model = "haiku",
 
 			completion = {
-
 				custom_rules = {
 					"scratch/custom_rules/",
 				},
-
 				source = "cmp",
 			},
-
 			md_files = {
 				"AGENT.md",
 			},
@@ -40,6 +36,11 @@ return {
 
 		vim.keymap.set("n", "<leader>9f", function() _99.fill_in_function_prompt() end)
 		vim.keymap.set("v", "<leader>9v", function() _99.visual_prompt() end)
-		vim.keymap.set("v", "<leader>9s", function() _99.stop_all_requests() end)
+		vim.keymap.set({ "v", "n" }, "<leader>9s", function() _99.stop_all_requests() end)
+
+		vim.keymap.set("n", "<leader>99", function()
+			vim.cmd("normal! ggVG")
+			_99.visual_prompt()
+		end)
 	end,
 }
