@@ -73,6 +73,12 @@ return {
 		-- Cmdline setup for `/` and `?` (search)
 		cmp.setup.cmdline({ "/", "?" }, {
 			mapping = cmp.mapping.preset.cmdline(),
+			window = {
+				completion = cmp.config.window.bordered({
+					border = "rounded",
+					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+				}),
+			},
 			sources = {
 				{ name = "buffer" },
 			},
@@ -81,6 +87,12 @@ return {
 		-- Cmdline setup for `:` (commands)
 		cmp.setup.cmdline(":", {
 			mapping = cmp.mapping.preset.cmdline(),
+			window = {
+				completion = cmp.config.window.bordered({
+					border = "rounded",
+					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+				}),
+			},
 			sources = cmp.config.sources({
 				{ name = "path" },
 			}, {
