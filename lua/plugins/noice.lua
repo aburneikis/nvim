@@ -37,7 +37,6 @@ return {
 			},
 		},
 		presets = {
-			bottom_search = true, -- use classic bottom cmdline for search
 			command_palette = true, -- use centered command palette
 			long_message_to_split = true,
 			lsp_doc_border = true,
