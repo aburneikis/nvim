@@ -7,7 +7,7 @@ return {
 	opts = {
 		cmdline = {
 			enabled = true,
-			view = "cmdline", -- cmdline at bottom (inline with statusline area)
+			-- view handled by command_palette preset
 			format = {
 				cmdline = { pattern = "^:", icon = "", lang = "vim" },
 				search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
@@ -24,7 +24,7 @@ return {
 			view_warn = "mini",
 		},
 		popupmenu = {
-			enabled = false,
+			enabled = false, -- cmp handles cmdline completion
 		},
 		lsp = {
 			progress = {
@@ -37,8 +37,8 @@ return {
 			},
 		},
 		presets = {
-			bottom_search = false, -- use classic bottom cmdline for search
-			command_palette = false, -- don't use centered command palette
+			bottom_search = true, -- use classic bottom cmdline for search
+			command_palette = true, -- use centered command palette
 			long_message_to_split = true,
 			lsp_doc_border = true,
 		},
