@@ -9,6 +9,14 @@ local function harpoon_desc(n)
 	end
 end
 
+local function toggle_desc(base, is_enabled)
+	return function()
+		local state = is_enabled() and "●" or "○"
+		local padding = 22 - #base - 1
+		return base .. string.rep(" ", math.max(padding, 1)) .. state
+	end
+end
+
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
@@ -36,21 +44,11 @@ return {
 			{ "<leader>t", group = "toggle" },
 			{
 				"<leader>tw",
-				desc = function()
-					local base = "Toggle line wrap"
-					local state = vim.wo.wrap and "●" or "○"
-					local padding = 22 - #base - 1
-					return base .. string.rep(" ", math.max(padding, 1)) .. state
-				end,
+				desc = toggle_desc("line wrap", function() return vim.wo.wrap end),
 			},
 			{
 				"<leader>tf",
-				desc = function()
-					local base = "Toggle autoformat"
-					local state = (not vim.g.disable_autoformat) and "●" or "○"
-					local padding = 22 - #base - 1
-					return base .. string.rep(" ", math.max(padding, 1)) .. state
-				end,
+				desc = toggle_desc("autoformat", function() return not vim.g.disable_autoformat end),
 			},
 			{ "<leader>s", group = "split" },
 			{ "<leader>9", group = "99" },
