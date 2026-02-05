@@ -7,11 +7,11 @@ map("n", "<C-k>", "<C-w>k", { desc = "Move to upper window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
 -- Window splits
-map("n", "<leader>sh", "<cmd>split<cr>", { desc = "Split window horizontally" })
-map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Split window vertically" })
-map("n", "<leader>sc", "<cmd>close<cr>", { desc = "Close current split" })
-map("n", "<leader>so", "<cmd>only<cr>", { desc = "Close other splits" })
-map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
+map("n", "<leader>sh", "<cmd>split<cr>", { desc = "horizontally" })
+map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "vertically" })
+map("n", "<leader>sc", "<cmd>close<cr>", { desc = "Close current" })
+map("n", "<leader>so", "<cmd>only<cr>", { desc = "Close others" })
+map("n", "<leader>se", "<C-w>=", { desc = "Make equal size" })
 
 -- Resize windows
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
@@ -33,11 +33,11 @@ map("v", ">", ">gv")
 map("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
 
 -- Buffer navigation
-map("n", "[b", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
-map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
-map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Close buffer" })
-map("n", "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", { desc = "Delete buffers to the left" })
-map("n", "<leader>bl", "<cmd>BufferLineCloseRight<cr>", { desc = "Delete buffers to the right" })
+map("n", "[b", "<cmd>bprevious<cr>", { desc = "Previous" })
+map("n", "]b", "<cmd>bnext<cr>", { desc = "Next" })
+map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Close" })
+map("n", "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", { desc = "Delete to the left" })
+map("n", "<leader>bl", "<cmd>BufferLineCloseRight<cr>", { desc = "Delete to the right" })
 
 -- Centered scrolling
 map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down centered" })
@@ -66,7 +66,7 @@ map("n", "<leader>yF", function()
 end, { desc = "absolute file path" })
 
 -- QuickFix
-map("n", "<leader>co", "<cmd>copen<cr>", { desc = "Open QuickFix" })
-map("n", "<leader>cc", "<cmd>cclose<cr>", { desc = "Close QuickFix" })
-map("n", "<leader>cn", "<cmd>cnext<cr>", { desc = "Next QuickFix item" })
-map("n", "<leader>cp", "<cmd>cprev<cr>", { desc = "Previous QuickFix item" })
+map("n", "<leader>co", "<cmd>copen<cr>", { desc = "Open" })
+map("n", "<leader>cc", "<cmd>cclose<cr>", { desc = "Close" })
+map("n", "<leader>cn", "<cmd>cnext<cr>", { desc = "Next fix" })
+map("n", "<leader>cp", "<cmd>cprev<cr>", { desc = "Previous fix" })
