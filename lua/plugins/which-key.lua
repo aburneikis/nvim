@@ -34,6 +34,14 @@ return {
 			{ "<leader>4", desc = harpoon_desc(4) },
 			{ "<leader>5", desc = harpoon_desc(5) },
 			{ "<leader>t", group = "toggle" },
+			{
+				"<leader>tw",
+				desc = function() return "Toggle line wrap [" .. (vim.wo.wrap and "on" or "off") .. "]" end,
+			},
+			{
+				"<leader>tf",
+				desc = function() return "Toggle autoformat [" .. (vim.g.disable_autoformat and "off" or "on") .. "]" end,
+			},
 			{ "<leader>s", group = "split" },
 			{ "<leader>9", group = "99" },
 			{ "<leader>b", group = "buffer" },
