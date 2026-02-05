@@ -9,13 +9,7 @@ local function harpoon_desc(n)
 	end
 end
 
-local function toggle_desc(base, is_enabled)
-	return function()
-		local state = is_enabled() and "●" or "○"
-		local padding = 22 - #base - 1
-		return base .. string.rep(" ", math.max(padding, 1)) .. state
-	end
-end
+local toggles = require("config.toggles")
 
 return {
 	"folke/which-key.nvim",
@@ -33,7 +27,7 @@ return {
 		win = {
 			border = "rounded",
 		},
-		spec = {
+		spec = vim.list_extend({
 			{ "<leader>f", group = "find" },
 			{ "<leader>c", group = "quickfix" },
 			{ "<leader>1", desc = harpoon_desc(1) },
@@ -41,19 +35,11 @@ return {
 			{ "<leader>3", desc = harpoon_desc(3) },
 			{ "<leader>4", desc = harpoon_desc(4) },
 			{ "<leader>5", desc = harpoon_desc(5) },
-			{ "<leader>t", group = "toggle" },
 			{ "<leader>s", group = "split" },
 			{ "<leader>9", group = "99" },
 			{ "<leader>b", group = "buffer" },
+			{ "<leader>t", group = "toggle" },
 			{ "<leader>y", group = "yank" },
-			{
-				"<leader>tw",
-				desc = toggle_desc("line wrap", function() return vim.wo.wrap end),
-			},
-			{
-				"<leader>tf",
-				desc = toggle_desc("autoformat", function() return not vim.g.disable_autoformat end),
-			},
-		},
+		}, toggles.keymaps),
 	},
 }

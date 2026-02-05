@@ -50,10 +50,6 @@ map({ "n", "v" }, "y", '"+y', { desc = "Yank to clipboard" })
 map("n", "Y", '"+y$', { desc = "Yank to end of line to clipboard" })
 map("n", "yy", '"+yy', { desc = "Yank line to clipboard" })
 
--- Toggle options
-map("n", "<leader>tw", "<cmd>set wrap!<cr>", { desc = "Toggle line wrap" })
-map("n", "<leader>tf", function() vim.g.disable_autoformat = not vim.g.disable_autoformat end, { desc = "Toggle autoformat" })
-
 -- Return to dashboard
 map("n", "<leader>d", function() Snacks.dashboard() end, { desc = "Dashboard" })
 
@@ -62,12 +58,12 @@ map("n", "<leader>yf", function()
 	local filepath = vim.fn.expand("%:.")
 	vim.fn.setreg("+", filepath)
 	print("Yanked relative file path: " .. filepath)
-end, { desc = "Yank relative file path" })
+end, { desc = "relative file path" })
 map("n", "<leader>yF", function()
 	local filepath = vim.fn.expand("%:p")
 	vim.fn.setreg("+", filepath)
 	print("Yanked absolute file path: " .. filepath)
-end, { desc = "Yank absolute file path" })
+end, { desc = "absolute file path" })
 
 -- QuickFix
 map("n", "<leader>co", "<cmd>copen<cr>", { desc = "Open QuickFix" })
