@@ -38,8 +38,8 @@ return {
 				"<leader>tw",
 				desc = function()
 					local base = "Toggle line wrap"
-					local state = "[" .. (vim.wo.wrap and "on" or "off") .. "]"
-					local padding = 25 - #base - #state
+					local state = vim.wo.wrap and "●" or "○"
+					local padding = 22 - #base - 1
 					return base .. string.rep(" ", math.max(padding, 1)) .. state
 				end,
 			},
@@ -47,8 +47,8 @@ return {
 				"<leader>tf",
 				desc = function()
 					local base = "Toggle autoformat"
-					local state = "[" .. (vim.g.disable_autoformat and "off" or "on") .. "]"
-					local padding = 25 - #base - #state
+					local state = (not vim.g.disable_autoformat) and "●" or "○"
+					local padding = 22 - #base - 1
 					return base .. string.rep(" ", math.max(padding, 1)) .. state
 				end,
 			},
