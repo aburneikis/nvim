@@ -7,8 +7,8 @@ map("n", "<C-k>", "<C-w>k", { desc = "Move to upper window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
 -- Window splits
-map("n", "<leader>sh", "<cmd>split<cr>", { desc = "horizontally" })
-map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "vertically" })
+map("n", "<leader>sh", "<cmd>split<cr>", { desc = "Horizontally" })
+map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Vertically" })
 map("n", "<leader>sc", "<cmd>close<cr>", { desc = "Close current" })
 map("n", "<leader>so", "<cmd>only<cr>", { desc = "Close others" })
 map("n", "<leader>se", "<C-w>=", { desc = "Make equal size" })

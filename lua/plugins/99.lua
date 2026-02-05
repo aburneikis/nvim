@@ -34,13 +34,13 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>9f", function() _99.fill_in_function_prompt() end)
-		vim.keymap.set("v", "<leader>99", function() _99.visual_prompt() end)
-		vim.keymap.set({ "v", "n" }, "<leader>9s", function() _99.stop_all_requests() end)
+		vim.keymap.set("n", "<leader>9f", function() _99.fill_in_function_prompt() end, { desc = "Fill in function" })
+		vim.keymap.set("v", "<leader>99", function() _99.visual_prompt() end, { desc = "Visual prompt" })
+		vim.keymap.set({ "v", "n" }, "<leader>9s", function() _99.stop_all_requests() end, { desc = "Stop all requests" })
 
 		vim.keymap.set("n", "<leader>99", function()
 			vim.cmd("normal! ggVG")
 			_99.visual_prompt()
-		end)
+		end, { desc = "Prompt entire file" })
 	end,
 }

@@ -22,11 +22,11 @@ end)
 M.keymaps = {
 	{
 		"<leader>tw",
-		desc = toggle_desc("line wrap", function() return vim.wo.wrap end),
+		desc = toggle_desc("Line wrap", function() return vim.wo.wrap end),
 	},
 	{
 		"<leader>tf",
-		desc = toggle_desc("autoformat", function() return not vim.g.disable_autoformat end),
+		desc = toggle_desc("Autoformat", function() return not vim.g.disable_autoformat end),
 	},
 }
 
