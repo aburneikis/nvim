@@ -18,6 +18,16 @@ map("n", "<leader>tf", function()
 	vim.g.disable_autoformat = not vim.g.disable_autoformat
 	print("Autoformat " .. (vim.g.disable_autoformat and "disabled" or "enabled"))
 end)
+map("n", "<leader>ti", function()
+	vim.g.disable_trouble_inline = not vim.g.disable_trouble_inline
+
+	-- Toggle virtual text (inline diagnostics)
+	vim.diagnostic.config({
+		virtual_text = not vim.g.disable_trouble_inline,
+	})
+
+	print("Trouble inline diagnostics " .. (vim.g.disable_trouble_inline and "disabled" or "enabled"))
+end)
 
 M.keymaps = {
 	{
@@ -27,6 +37,12 @@ M.keymaps = {
 	{
 		"<leader>tf",
 		desc = toggle_desc("Autoformat", function() return not vim.g.disable_autoformat end),
+	},
+	{
+		"<leader>ti",
+		desc = toggle_desc("Trouble inline", function()
+			return not vim.g.disable_trouble_inline
+		end),
 	},
 }
 
