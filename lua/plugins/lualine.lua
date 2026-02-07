@@ -7,10 +7,6 @@ return {
 			function() return require("noice").api.status.search.get() end,
 			cond = function() return package.loaded["noice"] and require("noice").api.status.search.has() end,
 		}
-		local noice_mode = {
-			function() return require("noice").api.status.mode.get() end,
-			cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-		}
 
 		return {
 			options = {
@@ -24,10 +20,7 @@ return {
 				lualine_b = { "branch", "diff", "diagnostics" },
 				lualine_c = { { "filename", path = 0 } },
 				lualine_x = {
-					-- noice_search,
-					-- noice_mode,
-					-- "encoding",
-					-- "fileformat",
+					noice_search,
 					"filetype",
 				},
 				lualine_y = { "progress" },
